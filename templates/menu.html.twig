@@ -1,0 +1,28 @@
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="{{path('home')}}" class="active">Acceuil</a></li>
+                        <li><a href="{{ path('auteur_index') }}">Auteurs</a></li>
+                        <li class="scroll-to-section"><a href="{{path('livre_index')}}">Livres</a></li>
+                        <li class="scroll-to-section"><a href="{{path('editeur_index')}}">Editeurs</a></li>
+                        <li class="scroll-to-section"><a href="{{path('categorie_index')}}">Catégories</a></li>
+
+                        <li class="scroll-to-section"><a href="{{ path('app_login') }}">Déconexion</a></li>
+
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
