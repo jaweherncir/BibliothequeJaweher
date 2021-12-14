@@ -9,9 +9,17 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
+    <title>Gestion Bibliotheque</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+
+
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="apple-touch-icon" href="{{ asset('template/apple-icon.png')}}">
     <link rel="shortcut icon" href="{{ asset('template/favicon.ico')}}">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
@@ -28,7 +36,32 @@
     <link rel="stylesheet" href="{{ asset('template/vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}">
 
     <link rel="stylesheet" href="{{ asset('template/assets/css/style.css')}}">
+<style>
 
+    h0 {
+        position: relative;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        font-size: 2em;
+        letter-spacing: 4px;
+        overflow: hidden;
+        background: linear-gradient(90deg, #000, #fff, #000);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        animation: animate 3s linear infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    }
+
+    @keyframes animate {
+        0% {
+            background-position: -500%;
+        }
+        100% {
+            background-position: 500%;
+        }
+    }
+</style>
 </head>
 
 <body>
@@ -52,46 +85,94 @@
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="{{path('home')}}"> <i class="menu-icon fa fa-dashboard"></i>BiBliothéque </a>
+                    <a href="{{path('home')}}"> <img src="https://www.gifsanimes.com/data/media/53/livre-image-animee-0019.gif"
+                                                     width="50dp" height="50dp" alt="" class="w-64 mx-auto">Bibliothéque </a>
                 </li>
                 <h3 class="menu-title">Menu Bibliothéque</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="{{path('livre_index')}}" > <i class="menu-icon fa fa-laptop"></i>Livres</a>
+                    <a href="{{path('livre_index')}}" >
+                        <img src="https://www.gif-maniac.com/gifs/54/53780.gif"
+                             width="30dp" height="30dp" alt="" class="w-64 mx-auto">
+
+                        Livres</a>
 
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="{{ path('auteur_index') }}" ><i class="menu-icon fa fa-laptop"></i>Auteurs</a>
+                    <a href="{{ path('auteur_index') }}" >
+                        <img src="https://www.gif-maniac.com/gifs/54/53804.gif"
+
+                             width="30dp" height="30dp" alt="" class="w-64 mx-auto">
+                        Auteurs</a>
 
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="{{path('categorie_index')}}" ><i class="menu-icon fa fa-laptop"></i>Categories</a>
+                    <a href="{{path('categorie_index')}}" >
+                        <img src="https://www.informatiquegifs.com/livres/gifs-livres-14.gif"
+                             width="30dp" height="30dp" alt="" class="w-64 mx-auto">
+                        Categories</a>
 
                 </li>
                 <li class="menu-item-has-children dropdown">
-                  <a href="{{path('editeur_index')}}" > <i class="menu-icon fa fa-laptop"></i>Editeurs</a>
+                  <a href="{{path('editeur_index')}}" >
+                      <img src="https://www.gif-maniac.com/gifs/54/53804.gif"
+                           width="30dp" height="30dp" alt="" class="w-64 mx-auto">
+                      Editeurs</a>
 
                 </li>
 
                 <li class="menu-item-has-children dropdown">
-                    <a href="" > <i class="menu-icon fa fa-laptop"></i>Statstique</a>
+
+                    <a href="{{path('chartjs')}}" >
+                        <img src="https://www.laprovidence-rochefort.fr/Wmaths/wp-content/uploads/2020/05/statistiques-gif-6.gif"
+                             width="30dp" height="30dp" alt="" class="w-64 mx-auto">
+                        Statstique</a>
 
                 </li>
 
                 <li class="menu-item-has-children dropdown">
-                    <a href="{{path('emprunt_index')}}" > <i class="menu-icon fa fa-laptop"></i>Emprunt</a>
+                    <a href="{{path('emprunt_index')}}" >
+                        <img src="https://www.gif-maniac.com/gifs/54/53777.gif"
+                             width="30dp" height="30dp" alt="" class="w-64 mx-auto">
+                        Emprunt</a>
+
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="{{path('emprunteur')}}" >
+                        <img src="https://www.icone-gif.com/gif/ecole/loupe/loupes005.gif"
+                             width="30dp" height="30dp" alt="" class="w-64 mx-auto">
+                        Recherche</a>
 
                 </li>
 
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="menu-icon fa fa-glass"></i>Parametéres</a>
+                        <img src="https://dl.img-news.com/dl/img/s3/dl/2020/09/settings-app-icon.gif"
+                        width="30dp" height="30dp" alt="" class="w-64 mx-auto">Parametéres</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-sign-in"></i><a href="{{path('app_login')}}">Login</a></li>
                         <li><i class="menu-icon fa fa-sign-in"></i><a href="{{path('app_register')}}">Register</a></li>
 
                     </ul>
+
+
+
+
+
+
+
+
                 </li>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+
+                        <img src="http://lyonnaise69.l.y.pic.centerblog.net/anim-livre.gif"
+                             width="100dp" height="100dp" alt="" class="w-64 mx-auto">
+
+                </li>
+
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
@@ -111,7 +192,7 @@
             <div class="col-sm-7">
                 <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
                 <div class="header-left">
-                    <button class="search-trigger"><i class="fa fa-search"></i></button>
+                    <center><h0>Gestion Bibliothéque</h0></center>
                     <div class="form-inline">
                         <form class="search-form">
                             <input class="form-control mr-sm-2"
@@ -146,27 +227,6 @@
     </header><!-- /header -->
     <!-- Header-->
 
-    <div class="breadcrumbs">
-        <div class="col-sm-4">
-            <div class="page-header float-left">
-                <div class="page-title">
-                    <h1>Gestion Bibliothéque</h1>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8">
-            <div class="page-header float-right">
-                <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li class="active">Mon Bibliothéque</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
 
                 <div class="col-md-12">
                     <div class="card">
@@ -175,9 +235,12 @@
                         </div>
                         <div class="card-body">
 
-    {% block body %}
+                     {% block body %}
 
-    {% endblock %}
+
+
+
+                   {% endblock %}
                         </div>
                     </div>
                 </div>
@@ -213,6 +276,9 @@
 <script src="{{ asset('template/assets/js/init-scripts/data-table/datatables-init.js')}}"></script>
 
 
+<!--  Chart js -->
+<script src="{{ asset('template/vendors/chart.js/dist/Chart.bundle.min.js')}}"></script>
+<script src="{{ asset('template/assets/js/init-scripts/chart-js/chartjs-init.js')}}"></script>
 
 <script>
     (function($) {
